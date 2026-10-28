@@ -23,3 +23,7 @@ npm run dev
 
 ## Vercel
 A projekt közvetlenül telepíthető Next.js projektként.
+
+
+## v1.0.1
+Biztonsági kompatibilitási frissítés Vercelhez: Next.js 15.5.18, React/React DOM 19.1.7.

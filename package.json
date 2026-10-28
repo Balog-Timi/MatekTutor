@@ -1,6 +1,6 @@
 {
   "name": "matektutor-uj-prototipus-v1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,9 +9,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "15.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "next": "15.5.18",
+    "react": "19.1.7",
+    "react-dom": "19.1.7"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
