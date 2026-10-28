@@ -1,0 +1,1529 @@
+{
+  "title": "MatekTutor 9. évfolyam – Kombinatorika, halmazok",
+  "version": "1.0",
+  "basis": "Sokszínű matematika 9. témasorrendjéhez igazított, saját készítésű MatekTutor-tartalom.",
+  "modules": [
+    {
+      "id": "K01",
+      "title": "A matematika nyelve",
+      "goal": "A tanuló hétköznapi mondatokat matematikai állításokká tudjon alakítani, és biztosan értse a „legalább”, „legfeljebb”, „és”, „vagy”, valamint a tagadás jelentését.",
+      "why": "Egy matematikai feladatban sokszor nem a számolás a nehéz, hanem annak pontos megértése, mit állít a szöveg. Itt megtanuljuk „lefordítani” a matematika nyelvét.",
+      "prereq": [
+        "egész számok összehasonlítása",
+        "<, >, = jelek alapvető használata"
+      ],
+      "concepts": [
+        [
+          "Pontos jelentés",
+          "A matematika nyelve azért szigorú, mert ugyanazt a mondatot mindenkinek ugyanúgy kell értenie. A „legalább 5” azt jelenti: 5 vagy annál több, tehát x ≥ 5. A „legfeljebb 5” azt jelenti: 5 vagy annál kevesebb, tehát x ≤ 5."
+        ],
+        [
+          "És / vagy",
+          "Az „és” azt jelenti, hogy mindkét feltételnek egyszerre teljesülnie kell. A matematikai „vagy” általában megengedő: legalább az egyik feltétel teljesül, akár mindkettő is."
+        ],
+        [
+          "Tagadás",
+          "Egy állítás tagadása pontosan azokat az eseteket tartalmazza, amikor az eredeti állítás nem igaz. Például „x > 3” tagadása „x ≤ 3”."
+        ],
+        [
+          "Ellenpélda",
+          "Egy általános állítás megcáfolásához elég egyetlen olyan példa, amelyre az állítás nem igaz. Ezt ellenpéldának nevezzük."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "Fordítsd le: „Egy koncertre legalább 120 ember érkezett.”",
+          "steps": [
+            "Jelöljük a résztvevők számát n-nel.",
+            "A „legalább 120” azt jelenti: 120 vagy annál több.",
+            "Ezért: n ≥ 120."
+          ],
+          "check": "Ha 120 ember érkezett, teljesül? Igen. Ha 119, teljesül? Nem."
+        },
+        {
+          "prompt": "Mi a tagadása annak, hogy x > 3?",
+          "steps": [
+            "Az eredeti állítás minden 3-nál nagyobb számra igaz.",
+            "A tagadásnak minden más számot kell lefednie, a 3-at is.",
+            "Ezért a tagadás: x ≤ 3."
+          ],
+          "check": "x = 3 esetén az eredeti hamis, a tagadás igaz."
+        }
+      ],
+      "practice": [
+        [
+          "K01-P01",
+          "Mit jelent a „x legfeljebb 7” mondat?",
+          "x ≤ 7",
+          "A „legfeljebb” a határértéket is megengedi.",
+          "A 7 is jó, és minden nála kisebb szám is.",
+          "x ≤ 7"
+        ],
+        [
+          "K01-P02",
+          "Írd matematikai jellel: „n legalább 12”.",
+          "n ≥ 12",
+          "A „legalább” azt jelenti: 12 vagy több.",
+          "A 12 is megengedett, ezért nem csak > jel kell.",
+          "n ≥ 12"
+        ],
+        [
+          "K01-P03",
+          "Mely egész számok teljesítik egyszerre: x > 0 ÉS x < 5?",
+          "{1, 2, 3, 4}",
+          "Az „és” miatt mindkét feltételnek egyszerre kell teljesülnie.",
+          "Sorold fel a 0-nál nagyobb, de 5-nél kisebb egészeket.",
+          "{1, 2, 3, 4}"
+        ],
+        [
+          "K01-P04",
+          "Mely 1 és 10 közötti egész számok oszthatók 2-vel VAGY 3-mal?",
+          "{2, 3, 4, 6, 8, 9, 10}",
+          "A matematikai „vagy” megengedi azt is, hogy mindkettő igaz legyen.",
+          "Írd fel külön a 2 többszöröseit és a 3 többszöröseit, majd egyesítsd őket.",
+          "2 többszörösei: 2,4,6,8,10; 3 többszörösei: 3,6,9. Együtt: {2,3,4,6,8,9,10}."
+        ],
+        [
+          "K01-P05",
+          "Mi a tagadása ennek: a ≤ 4?",
+          "a > 4",
+          "A tagadásnak a 4-et nem szabad tartalmaznia, mert az eredeti állításban benne van.",
+          "Mely számokra nem igaz az, hogy a legfeljebb 4?",
+          "a > 4"
+        ],
+        [
+          "K01-P06",
+          "Igaz-e? „Ha egy egész szám 4-gyel osztható, akkor páros.”",
+          "igaz",
+          "Próbáld meg felírni: 4k = 2·(2k).",
+          "Minden 4 többszöröse egyben 2 többszöröse is.",
+          "Igaz, mert ha n=4k, akkor n=2·(2k), tehát páros."
+        ],
+        [
+          "K01-P07",
+          "Cáfold meg ellenpéldával: „Ha egy szám páros, akkor 4-gyel is osztható.”",
+          "például 6",
+          "Egyetlen páros számot keress, amely nem osztható 4-gyel.",
+          "A 2, 6, 10, 14 közül bármelyik megfelel.",
+          "Például 6 páros, de 4-gyel nem osztható, ezért az állítás hamis."
+        ]
+      ],
+      "independent": [
+        [
+          "K01-T01",
+          "Írd le szavakkal: 3 ≤ x < 8.",
+          "x legalább 3 és 8-nál kisebb"
+        ],
+        [
+          "K01-T02",
+          "Sorold fel azokat az egész számokat, amelyekre −2 < x ≤ 2.",
+          "{-1, 0, 1, 2}"
+        ]
+      ],
+      "common_errors": [
+        "A „legalább” és „legfeljebb” felcserélése.",
+        "A határérték kihagyása ≥ vagy ≤ esetén.",
+        "A „vagy” kizárólagos értelmezése.",
+        "A tagadásnál csak a relációjel megfordítása a határérték helyes kezelése nélkül."
+      ],
+      "mastery": "A két önálló feladatból legalább 2/2 helyes, segítség nélkül. Ha nem, rövid visszatérés a relációjelekhez és a tagadáshoz."
+    },
+    {
+      "id": "K02",
+      "title": "Számoljuk össze!",
+      "goal": "A tanuló rendszerezetten tudjon lehetőségeket összeszámolni, és felismerje, mikor összeadási, illetve mikor szorzási gondolat szükséges.",
+      "why": "Jelszavak, útvonalak, menük, ruhakombinációk: rengeteg hétköznapi kérdés valójában arról szól, hányféle lehetőség van.",
+      "prereq": [
+        "alapműveletek",
+        "egyszerű rendszerezés"
+      ],
+      "concepts": [
+        [
+          "Rendszeres felsorolás",
+          "Kis elemszámnál a lehetőségeket úgy soroljuk fel, hogy egyik se maradjon ki és egyik se szerepeljen kétszer."
+        ],
+        [
+          "Faábra",
+          "Egymás után meghozott döntéseket ágakkal lehet ábrázolni. Minden teljes út egy lehetőség."
+        ],
+        [
+          "Szorzási szabály",
+          "Ha az első döntésre a lehetőség van, és minden első döntés után b második lehetőség, akkor összesen a·b lehetőség van."
+        ],
+        [
+          "Összeadási szabály",
+          "Ha egymást kizáró esetek közül választhatunk, az esetek darabszámát összeadjuk."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "3 póló és 2 nadrág közül választunk egy pólót és egy nadrágot. Hány öltözék készülhet?",
+          "steps": [
+            "Minden pólóhoz 2 nadrág választható.",
+            "Ez 3 darab kétágú választás.",
+            "3·2 = 6."
+          ],
+          "check": "Faábrán 6 végpontot kapnánk."
+        },
+        {
+          "prompt": "Egy büfében 4 féle szendvics VAGY 3 féle saláta közül választunk pontosan egy ételt. Hány lehetőség van?",
+          "steps": [
+            "A szendvics és a saláta két külön, egymást kizáró eset.",
+            "4 + 3 = 7."
+          ],
+          "check": "Nem választunk egyszerre szendvicset és salátát, ezért nem szorzunk."
+        }
+      ],
+      "practice": [
+        [
+          "K02-P01",
+          "2 féle sapka és 4 féle sál közül választasz egyet-egyet. Hány összeállítás van?",
+          "8",
+          "Két egymás utáni választás történik.",
+          "Minden sapkához 4 sál tartozhat.",
+          "2·4 = 8."
+        ],
+        [
+          "K02-P02",
+          "Egy menüben 3 leves és 5 főétel van. Egy levest és egy főételt választasz. Hány menü készíthető?",
+          "15",
+          "Minden leves után bármelyik főétel választható.",
+          "3 választás, mindegyikhez 5 folytatás.",
+          "3·5 = 15."
+        ],
+        [
+          "K02-P03",
+          "Egy ajtóhoz 4 különböző kulcs, egy másikhoz 3 különböző kulcs próbálható. Ha csak az egyik ajtót kell kinyitni, összesen hány kulcs közül választhatsz?",
+          "7",
+          "Itt nem két egymás utáni döntés van.",
+          "Vagy az első ajtó 4 kulcsa közül, vagy a második 3 kulcsa közül választasz.",
+          "4+3 = 7."
+        ],
+        [
+          "K02-P04",
+          "Egy kód első karaktere A, B vagy C, a második karaktere 1, 2, 3 vagy 4. Hány különböző kód van?",
+          "12",
+          "Az első és második pozíció egymást követi.",
+          "3 lehetőség után mindig 4 lehetőség jöhet.",
+          "3·4 = 12."
+        ],
+        [
+          "K02-P05",
+          "Három igen/nem kérdésre válaszolunk. Hányféle válaszsorozat lehetséges?",
+          "8",
+          "Minden kérdésnél 2 lehetőség van.",
+          "Három egymás utáni kétágú döntés: 2·2·2.",
+          "8 válaszsorozat."
+        ],
+        [
+          "K02-P06",
+          "A városból a tóhoz 3 út vezet, a tótól a kilátóhoz 2 út. Hányféleképpen juthatsz a városból a kilátóhoz a tavon át?",
+          "6",
+          "Egy első út után egy második utat is választani kell.",
+          "Mindhárom első úthoz 2 folytatás tartozik.",
+          "3·2 = 6."
+        ],
+        [
+          "K02-P07",
+          "Öt futó közül arany- és ezüstérmest választunk, ugyanaz a futó nem lehet mindkettő. Hány lehetséges sorrend van?",
+          "20",
+          "Az arany helyére 5 ember kerülhet. Utána eggyel kevesebb marad.",
+          "5·4.",
+          "20 különböző dobogós sorrend."
+        ]
+      ],
+      "independent": [
+        [
+          "K02-T01",
+          "Egy rendszámrész két betűből áll. Mindkét helyre az A, B vagy C kerülhet, ismétlés megengedett. Hány lehetőség van?",
+          "9"
+        ],
+        [
+          "K02-T02",
+          "Egy fagylaltozóban 5 íz és 3 öntet van. Egy ízt és egy öntetet választasz. Hányféle rendelés lehet?",
+          "15"
+        ]
+      ],
+      "common_errors": [
+        "Összeadás használata egymás utáni választásoknál.",
+        "Szorzás használata egymást kizáró eseteknél.",
+        "Ismétlés tilalmának figyelmen kívül hagyása.",
+        "Rendszertelen felsorolásból kimaradó vagy duplán számolt esetek."
+      ],
+      "mastery": "2/2 önálló feladat helyes. A rendszer külön figyeli, hogy a tanuló meg tudja-e indokolni: összeadás vagy szorzás."
+    },
+    {
+      "id": "K03",
+      "title": "Halmazok",
+      "goal": "A tanuló biztosan használja az elem, halmaz, részhalmaz, üres halmaz és elemszám fogalmát, és tudjon halmazt felsorolással vagy tulajdonsággal megadni.",
+      "why": "A halmazokkal dolgokat rendezünk csoportokba. Ugyanez a gondolat később egyenleteknél, függvényeknél, valószínűségnél és adatkezelésnél is visszatér.",
+      "prereq": [
+        "matematikai jelölések alapjai"
+      ],
+      "concepts": [
+        [
+          "Elem és halmaz",
+          "Ha x eleme A-nak: x ∈ A. Ha nem eleme: x ∉ A."
+        ],
+        [
+          "Halmaz megadása",
+          "Megadhatjuk elemeinek felsorolásával vagy egy közös tulajdonsággal."
+        ],
+        [
+          "Részhalmaz",
+          "B ⊆ A azt jelenti, hogy B minden eleme A-nak is eleme."
+        ],
+        [
+          "Elemek nem ismétlődnek",
+          "Egy halmazban az ismételt felsorolás nem hoz létre új elemet: {1,1,2} ugyanaz a halmaz, mint {1,2}."
+        ],
+        [
+          "Üres halmaz",
+          "Az ∅ olyan halmaz, amelynek nincs eleme."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "Legyen A = {2,4,6,8}. Igaz-e, hogy 4 ∈ A és {4,6} ⊆ A?",
+          "steps": [
+            "4 szerepel A elemei között, tehát 4 ∈ A.",
+            "A {4,6} halmaz mindkét eleme A-ban van.",
+            "Ezért {4,6} ⊆ A."
+          ],
+          "check": "Figyelj: 4 egy elem, {4,6} pedig egy halmaz."
+        },
+        {
+          "prompt": "Add meg felsorolással a 10-nél kisebb pozitív, 3-mal osztható egész számokat.",
+          "steps": [
+            "10-nél kisebb pozitív egészek: 1,...,9.",
+            "Ezek közül 3-mal osztható: 3,6,9.",
+            "A = {3,6,9}."
+          ],
+          "check": "0 nem pozitív, 12 pedig már nem kisebb 10-nél."
+        }
+      ],
+      "practice": [
+        [
+          "K03-P01",
+          "A={1,3,5,7}. Igaz-e: 5 ∈ A?",
+          "igaz",
+          "Nézd meg, szerepel-e az 5 a felsorolásban.",
+          "Az 5 ott van A elemei között.",
+          "Igaz: 5 ∈ A."
+        ],
+        [
+          "K03-P02",
+          "A={1,3,5,7}. Igaz-e: 2 ∉ A?",
+          "igaz",
+          "Nézd meg, szerepel-e a 2.",
+          "A 2 nincs a felsorolásban.",
+          "Igaz: 2 ∉ A."
+        ],
+        [
+          "K03-P03",
+          "Hány eleme van a {2,2,4,4,6} halmaznak?",
+          "3",
+          "A halmazban az ismétlés nem számít új elemnek.",
+          "A különböző elemek: 2,4,6.",
+          "Az elemszám 3."
+        ],
+        [
+          "K03-P04",
+          "Legyen A={1,2,3,4}. Igaz-e: {2,4} ⊆ A?",
+          "igaz",
+          "A részhalmaz minden elemének benne kell lennie A-ban.",
+          "2 és 4 is A eleme.",
+          "Igaz."
+        ],
+        [
+          "K03-P05",
+          "Legyen A={1,2,3,4}. Igaz-e: {2,5} ⊆ A?",
+          "hamis",
+          "Keress olyan elemet a kis halmazban, amely nincs A-ban.",
+          "Az 5 nincs A-ban.",
+          "Hamis."
+        ],
+        [
+          "K03-P06",
+          "Add meg felsorolással: B={x egész | −2 ≤ x < 3}.",
+          "{-2,-1,0,1,2}",
+          "A −2 benne van, a 3 már nincs.",
+          "Sorold az egész számokat −2-től 2-ig.",
+          "B={−2,−1,0,1,2}."
+        ],
+        [
+          "K03-P07",
+          "Melyik halmaz az üres halmaz? „A 0-nál nagyobb és 0-nál kisebb valós számok halmaza.”",
+          "∅",
+          "Lehet-e egy szám egyszerre nagyobb és kisebb 0-nál?",
+          "Nincs ilyen szám.",
+          "A halmaznak nincs eleme, tehát ∅."
+        ]
+      ],
+      "independent": [
+        [
+          "K03-T01",
+          "Legyen A={−2,0,2,4}. Döntsd el: {0,4} ⊆ A.",
+          "igaz"
+        ],
+        [
+          "K03-T02",
+          "Add meg felsorolással a 12-nél kisebb pozitív páros egész számok halmazát.",
+          "{2,4,6,8,10}"
+        ]
+      ],
+      "common_errors": [
+        "Az ∈ és ⊆ jelek összekeverése.",
+        "Az ismétlődő elemek többszöri számolása.",
+        "A részhalmaz fogalmánál egyetlen kívül eső elem figyelmen kívül hagyása.",
+        "A 0 pozitív számként kezelése."
+      ],
+      "mastery": "2/2 önálló feladat segítség nélkül, és az ∈ / ⊆ megkülönböztetése stabil."
+    },
+    {
+      "id": "K04",
+      "title": "Halmazműveletek",
+      "goal": "A tanuló értse és alkalmazza az unió, metszet, különbség és komplementer műveleteket, felsorolással és Venn-diagram alapján is.",
+      "why": "Ha két csoport átfed, gyakran azt kérdezzük: kik tartoznak legalább az egyikbe, kik mindkettőbe, vagy kik csak az egyikbe. A halmazműveletek ezt teszik pontosan kezelhetővé.",
+      "prereq": [
+        "K03 – Halmazok"
+      ],
+      "concepts": [
+        [
+          "Unió",
+          "A ∪ B: azok az elemek, amelyek A vagy B legalább egyikében benne vannak."
+        ],
+        [
+          "Metszet",
+          "A ∩ B: azok az elemek, amelyek A-ban és B-ben is benne vannak."
+        ],
+        [
+          "Különbség",
+          "A \\ B: A azon elemei, amelyek B-ben nincsenek benne."
+        ],
+        [
+          "Komplementer",
+          "Egy alaphalmazhoz képest A komplementere azokból áll, amelyek az alaphalmazban benne vannak, A-ban viszont nem."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "A={1,2,3,4}, B={3,4,5}. Határozd meg A∪B és A∩B halmazokat.",
+          "steps": [
+            "Uniónál minden elemet összegyűjtünk, ismétlés nélkül: {1,2,3,4,5}.",
+            "Metszetnél csak a közöseket tartjuk meg: {3,4}."
+          ],
+          "check": "A 3 és 4 mindkettőben szerepel."
+        },
+        {
+          "prompt": "U={1,2,3,4,5,6}, A={2,4,6}. Mi A komplementere U-ban?",
+          "steps": [
+            "Az alaphalmaz minden eleme: 1,...,6.",
+            "Elhagyjuk A elemeit: 2,4,6.",
+            "Marad {1,3,5}."
+          ],
+          "check": "Komplementert mindig egy megadott alaphalmazhoz képest értelmezünk."
+        }
+      ],
+      "practice": [
+        [
+          "K04-P01",
+          "A={1,2,3}, B={3,4,5}. Mi A∪B?",
+          "{1,2,3,4,5}",
+          "Uniónál minden olyan elem kell, amely legalább az egyik halmazban benne van.",
+          "Írd össze a két felsorolást, az ismétlést csak egyszer hagyd meg.",
+          "{1,2,3,4,5}"
+        ],
+        [
+          "K04-P02",
+          "A={1,2,3}, B={3,4,5}. Mi A∩B?",
+          "{3}",
+          "Metszet = közös rész.",
+          "Melyik elem szerepel mindkét felsorolásban?",
+          "{3}"
+        ],
+        [
+          "K04-P03",
+          "A={1,2,3,4}, B={3,4,5}. Mi A\\B?",
+          "{1,2}",
+          "A-ból indulj, és töröld azokat, amelyek B-ben is benne vannak.",
+          "A 3 és 4 B-ben is szerepel.",
+          "{1,2}"
+        ],
+        [
+          "K04-P04",
+          "A={1,2,3,4}, B={3,4,5}. Mi B\\A?",
+          "{5}",
+          "A különbség iránya számít.",
+          "B elemei közül melyik nincs A-ban?",
+          "{5}"
+        ],
+        [
+          "K04-P05",
+          "U={1,2,3,4,5,6,7,8}, A={2,4,6,8}. Mi A komplementere U-ban?",
+          "{1,3,5,7}",
+          "Az alaphalmazból vedd ki A elemeit.",
+          "U-ban a párosak A-ban vannak, a páratlanok maradnak.",
+          "{1,3,5,7}"
+        ],
+        [
+          "K04-P06",
+          "A a 10-nél kisebb pozitív páros egészek, B a 10-nél kisebb pozitív 3-mal osztható egészek. Mi A∩B?",
+          "{6}",
+          "Írd fel külön a két halmazt.",
+          "A={2,4,6,8}, B={3,6,9}.",
+          "A∩B={6}."
+        ],
+        [
+          "K04-P07",
+          "U={1,...,10}. A={2,4,6,8,10}, B={1,2,3,4,5}. Mi (A∩B) komplementere U-ban?",
+          "{1,3,5,6,7,8,9,10}",
+          "Először a zárójeles műveletet végezd el.",
+          "A∩B={2,4}. Ezután U-ból vedd ki a 2-t és 4-et.",
+          "{1,3,5,6,7,8,9,10}"
+        ]
+      ],
+      "independent": [
+        [
+          "K04-T01",
+          "A={a,b,c,d}, B={c,d,e}. Határozd meg A∩B-t és A∪B-t.",
+          "A∩B={c,d}; A∪B={a,b,c,d,e}"
+        ],
+        [
+          "K04-T02",
+          "U={1,2,3,4,5}, A={1,4}. Add meg A komplementerét U-ban.",
+          "{2,3,5}"
+        ]
+      ],
+      "common_errors": [
+        "Az unió és metszet felcserélése.",
+        "A\\B és B\\A azonosnak vétele.",
+        "Komplementer számítása alaphalmaz nélkül.",
+        "Ismétlődő elemek többszöri felsorolása."
+      ],
+      "mastery": "2/2 önálló feladat helyes; különösen az A\\B irányának és a komplementer alaphalmazának értése."
+    },
+    {
+      "id": "K05",
+      "title": "Halmazok elemszáma és logikai szita",
+      "goal": "A tanuló Venn-diagrammal és elemszám-formulával meg tudja határozni két átfedő halmaz elemszámait, és szöveges feladatból ki tudja számítani a „csak”, „mindkettő”, „legalább az egyik” és „egyik sem” csoportokat.",
+      "why": "Egy osztályban hányan sportolnak? Hányan zenélnek? Hányan csinálják mindkettőt? Az átfedő csoportokat nem szabad kétszer megszámolni.",
+      "prereq": [
+        "K03 – Halmazok",
+        "K04 – Halmazműveletek"
+      ],
+      "concepts": [
+        [
+          "Miért kell korrigálni?",
+          "Ha |A| és |B| értékét összeadjuk, a közös elemeket kétszer számoljuk."
+        ],
+        [
+          "Két halmaz logikai szitája",
+          "|A∪B| = |A| + |B| − |A∩B|."
+        ],
+        [
+          "Csak A / csak B",
+          "Csak A: |A|−|A∩B|. Csak B: |B|−|A∩B|."
+        ],
+        [
+          "Egyik sem",
+          "Ha az alaphalmaz elemszáma |U|, akkor egyik sem: |U|−|A∪B|."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "Egy 30 fős osztályban 18-an fociznak, 14-en kosárlabdáznak, 6-an mindkettőt. Hányan sportolnak legalább az egyik módon?",
+          "steps": [
+            "18+14 = 32, de a 6 közös tanulót kétszer számoltuk.",
+            "Egyszer vissza kell vonni őket: 32−6 = 26.",
+            "Tehát |A∪B|=26."
+          ],
+          "check": "30 fős osztályban 26-an sportolnak legalább az egyik módon."
+        },
+        {
+          "prompt": "Az előző helyzetben hányan egyik sportot sem űzik?",
+          "steps": [
+            "Az osztály létszáma 30.",
+            "Legalább az egyik sportot 26-an űzik.",
+            "30−26 = 4."
+          ],
+          "check": "A Venn-diagram négy tartománya együtt 30 legyen."
+        }
+      ],
+      "practice": [
+        [
+          "K05-P01",
+          "|A|=12, |B|=9, |A∩B|=4. Mennyi |A∪B|?",
+          "17",
+          "A közös elemeket az összeadás kétszer számolja.",
+          "12+9−4.",
+          "17"
+        ],
+        [
+          "K05-P02",
+          "20 tanulóból 11 szereti a teát, 8 a kávét, 5 mindkettőt. Hányan szeretnek legalább egyet?",
+          "14",
+          "Használd a két halmaz szitaformuláját.",
+          "11+8−5.",
+          "14"
+        ],
+        [
+          "K05-P03",
+          "Az előző feladatban hányan szeretik csak a teát?",
+          "6",
+          "A teakedvelők közül vedd ki a mindkettőt kedvelőket.",
+          "11−5.",
+          "6"
+        ],
+        [
+          "K05-P04",
+          "Az előző feladatban hányan egyik italt sem szeretik?",
+          "6",
+          "Először számold ki, hányan vannak legalább az egyik halmazban.",
+          "Legalább egyet 14-en szeretnek, összesen 20-an vannak.",
+          "20−14=6."
+        ],
+        [
+          "K05-P05",
+          "Egy 32 fős osztályban 19-en járnak angol szakkörre, 17-en digitális kultúrára, 9-en mindkettőre. Hányan járnak pontosan az egyikre?",
+          "18",
+          "Számold ki külön a csak-A és csak-B részt.",
+          "Csak angol:19−9=10. Csak digitális:17−9=8.",
+          "10+8=18."
+        ],
+        [
+          "K05-P06",
+          "Egy felmérésben 40 főből 25 használ Instagramot, 22 TikTokot, 15 mindkettőt. Hányan egyik platformot sem használják?",
+          "8",
+          "Először legalább az egyik: 25+22−15.",
+          "Ez 32, majd 40−32.",
+          "8"
+        ],
+        [
+          "K05-P07",
+          "Egy könyvtár 50 látogatójából 31 kölcsönzött regényt, 24 ismeretterjesztő könyvet, 12 mindkettőt. Hányan kölcsönöztek csak ismeretterjesztőt?",
+          "12",
+          "A B halmazból vedd ki a közös részt.",
+          "24−12.",
+          "12"
+        ]
+      ],
+      "independent": [
+        [
+          "K05-T01",
+          "Egy 28 fős csoportban 16-an választották az A programot, 13-an a B programot, 7-en mindkettőt. Hányan választották legalább az egyiket, és hányan egyiket sem?",
+          "legalább egyik:22; egyik sem:6"
+        ],
+        [
+          "K05-T02",
+          "Egy felmérésben |A|=23, |B|=18, |A∩B|=8. Hányan tartoznak pontosan az egyik halmazba?",
+          "25"
+        ]
+      ],
+      "common_errors": [
+        "|A|+|B| használata a közös rész levonása nélkül.",
+        "A közös rész kétszeri levonása.",
+        "„Pontosan az egyik” összekeverése a „legalább az egyik” fogalmával.",
+        "Az „egyik sem” számításánál az alaphalmaz figyelmen kívül hagyása."
+      ],
+      "mastery": "2/2 önálló feladat helyes, és a tanuló Venn-diagramon is el tudja helyezni a négy tartomány elemszámait."
+    },
+    {
+      "id": "K06",
+      "title": "Számegyenesek és intervallumok",
+      "goal": "A tanuló egyenlőtlenséget, számegyenes-ábrát és intervallumjelölést egymásba tudjon fordítani, valamint intervallumok metszetét és unióját egyszerű esetekben meg tudja adni.",
+      "why": "Ha azt mondjuk, hogy egy hőmérséklet 18 és 24 °C közötti lehet, valójában nem egyetlen számot, hanem egy teljes számtartományt adunk meg. Ezt írjuk le intervallummal.",
+      "prereq": [
+        "K01 – relációjelek",
+        "K04 – unió és metszet"
+      ],
+      "concepts": [
+        [
+          "Zárt végpont",
+          "Ha a végpont is megengedett, zárt zárójelet használunk: [a;b]."
+        ],
+        [
+          "Nyílt végpont",
+          "Ha a végpont nem megengedett, nyílt zárójelet használunk: ]a;b[. Az alkalmazásban megjeleníthetjük a nemzetközi (a,b) jelölést is, de a tanulói felület alapértelmezetten a magyar tankönyvi jelölést használja."
+        ],
+        [
+          "Félig nyílt intervallum",
+          "Például [2;5[ azt jelenti: 2 ≤ x < 5."
+        ],
+        [
+          "Végtelen",
+          "∞ és −∞ soha nem tartozik az intervallumhoz, ezért a végtelen oldala mindig nyílt."
+        ],
+        [
+          "Metszet és unió",
+          "Intervallumoknál a metszet a közös rész, az unió az összes lefedett pont."
+        ]
+      ],
+      "guided": [
+        {
+          "prompt": "Írd intervallummal: 2 ≤ x < 7.",
+          "steps": [
+            "A 2 megengedett, ezért bal oldalon zárt.",
+            "A 7 nem megengedett, ezért jobb oldalon nyílt.",
+            "[2;7["
+          ],
+          "check": "x=2 benne van, x=7 nincs benne."
+        },
+        {
+          "prompt": "Mi [−1;4] és [2;6[ metszete?",
+          "steps": [
+            "A közös rész ott kezdődik, ahol mindkettő már jelen van: 2.",
+            "Ott ér véget, ahol az első intervallum véget ér: 4.",
+            "Mindkét végpont benne van a közös részben.",
+            "[2;4]"
+          ],
+          "check": "A 4 benne van mindkét intervallumban."
+        }
+      ],
+      "practice": [
+        [
+          "K06-P01",
+          "Írd intervallummal: x ≥ 3.",
+          "[3;+∞[",
+          "A 3 benne van, ezért ott zárt.",
+          "A +∞ soha nem végpontként benne lévő szám.",
+          "[3;+∞["
+        ],
+        [
+          "K06-P02",
+          "Írd egyenlőtlenséggel: ]−2;5].",
+          "−2 < x ≤ 5",
+          "Bal oldalon nyílt, jobb oldalon zárt.",
+          "−2 nem megengedett, 5 megengedett.",
+          "−2 < x ≤ 5."
+        ],
+        [
+          "K06-P03",
+          "Írd intervallummal: −4 < x < 1.",
+          "]−4;1[",
+          "Mindkét egyenlőtlenség szigorú.",
+          "Egyik végpont sem tartozik bele.",
+          "]−4;1["
+        ],
+        [
+          "K06-P04",
+          "Mi [0;5] ∩ [3;8] ?",
+          "[3;5]",
+          "Metszet = közös rész.",
+          "Mindkét intervallumban 3-tól 5-ig vagyunk.",
+          "[3;5]"
+        ],
+        [
+          "K06-P05",
+          "Mi [0;3] ∪ [2;6] ?",
+          "[0;6]",
+          "Az intervallumok átfednek, ezért az unió egybefüggő.",
+          "A lefedés 0-tól 6-ig tart.",
+          "[0;6]"
+        ],
+        [
+          "K06-P06",
+          "Mi ]−∞;2[ ∩ [2;5] ?",
+          "∅",
+          "A 2 az első intervallumban nincs benne, és nincs más közös pont.",
+          "Az első 2 előtt ér véget, a második 2-nél kezdődik.",
+          "A metszet üres: ∅."
+        ],
+        [
+          "K06-P07",
+          "Egy szolgáltatás 14:00-tól 18:00-ig érhető el, a 18:00-kor kezdődő időpont már nem foglalható. Írd intervallummal az időtartományt.",
+          "[14;18[",
+          "14:00 választható, 18:00 már nem.",
+          "Bal végpont zárt, jobb nyílt.",
+          "[14;18["
+        ]
+      ],
+      "independent": [
+        [
+          "K06-T01",
+          "Add meg intervallummal: −1 ≤ x ≤ 4.",
+          "[−1;4]"
+        ],
+        [
+          "K06-T02",
+          "Határozd meg: ]−3;2] ∩ [0;5[.",
+          "[0;2]"
+        ]
+      ],
+      "common_errors": [
+        "Nyílt és zárt végpont felcserélése.",
+        "A végtelenhez zárt zárójel írása.",
+        "Unió és metszet összekeverése.",
+        "Határértékek pontatlan kezelése."
+      ],
+      "mastery": "2/2 önálló feladat segítség nélkül, és legalább egy irányváltás: egyenlőtlenség→intervallum, illetve intervallum→egyenlőtlenség."
+    }
+  ],
+  "masterTask": {
+    "title": "Mesterfeladat – Iskolai digitális délután",
+    "student_text": [
+      "Egy 32 fős osztályban digitális délutánt szerveznek.",
+      "21 tanuló szívesen menne programozás foglalkozásra (P), 18 tanuló robotikára (R), és 12 tanuló mindkettőt választaná.",
+      "A programozás labor 14:00 és 16:30 között használható, a robotika terem 15:00 és 17:00 között. A kezdő időpontok használhatók, a záró időpontok is használhatók.",
+      "Oldd meg papíron, majd töltsd fel a teljes megoldás fényképét vagy PDF-jét."
+    ],
+    "parts": [
+      "1. Készíts Venn-diagramot, és írd be a négy tartomány elemszámát: csak P, csak R, mindkettő, egyik sem.",
+      "2. Hány tanuló választana legalább egy foglalkozást?",
+      "3. Hányan választanának pontosan egy foglalkozást?",
+      "4. Írd intervallummal a két terem használhatósági idejét.",
+      "5. Add meg a két időintervallum metszetét: mikor tartható olyan közös bemutató, amelyhez mindkét terem egyszerre elérhető?",
+      "6. Írj egy mondatot arról, melyik lépés volt számodra a legnehezebb."
+    ],
+    "solution": [
+      "|P∪R| = 21+18−12 = 27.",
+      "Csak P = 21−12 = 9.",
+      "Csak R = 18−12 = 6.",
+      "Mindkettő = 12.",
+      "Egyik sem = 32−27 = 5.",
+      "Pontosan egy = 9+6 = 15.",
+      "Programozás: [14;16,5] (időformában [14:00;16:30]).",
+      "Robotika: [15;17] (időformában [15:00;17:00]).",
+      "Metszet: [15:00;16:30]."
+    ],
+    "rubric": [
+      [
+        "Halmazmodell és Venn-diagram",
+        2,
+        "A négy tartomány helyes és követhető."
+      ],
+      [
+        "Logikai szita",
+        2,
+        "Legalább egyik / pontosan egyik / egyik sem helyes."
+      ],
+      [
+        "Intervallumok",
+        2,
+        "A két időintervallum és a végpontok helyesek."
+      ],
+      [
+        "Metszet értelmezése",
+        1,
+        "A közös idősáv helyes."
+      ],
+      [
+        "Indoklás, áttekinthetőség",
+        1,
+        "A levezetés olvasható és a tanuló röviden reflektál."
+      ]
+    ]
+  },
+  "teacherCheckpoint": [
+    "Ki fejezte be mind a hat modult?",
+    "Kinél volt segítség nélküli 2/2 az önálló ellenőrzés?",
+    "Melyik modulban kérte a legtöbb tanuló a „Következő lépést” vagy a „Teljes megoldást”?",
+    "Melyik tipikus hiba ismétlődött: ≥/≤, ∈/⊆, unió/metszet, dupla számolás, nyílt/zárt végpont?",
+    "Ki adta be a Mesterfeladatot?",
+    "Kinél indokolt rövid tanári beavatkozás vagy újrabeadás?"
+  ],
+  "items": [
+    {
+      "id": "K01-P01",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Mit jelent a „x legfeljebb 7” mondat?",
+      "acceptedAnswer": "x ≤ 7",
+      "help": {
+        "tip": "A „legfeljebb” a határértéket is megengedi.",
+        "nextStep": "A 7 is jó, és minden nála kisebb szám is.",
+        "fullSolution": "x ≤ 7"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P02",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Írd matematikai jellel: „n legalább 12”.",
+      "acceptedAnswer": "n ≥ 12",
+      "help": {
+        "tip": "A „legalább” azt jelenti: 12 vagy több.",
+        "nextStep": "A 12 is megengedett, ezért nem csak > jel kell.",
+        "fullSolution": "n ≥ 12"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P03",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Mely egész számok teljesítik egyszerre: x > 0 ÉS x < 5?",
+      "acceptedAnswer": "{1, 2, 3, 4}",
+      "help": {
+        "tip": "Az „és” miatt mindkét feltételnek egyszerre kell teljesülnie.",
+        "nextStep": "Sorold fel a 0-nál nagyobb, de 5-nél kisebb egészeket.",
+        "fullSolution": "{1, 2, 3, 4}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P04",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Mely 1 és 10 közötti egész számok oszthatók 2-vel VAGY 3-mal?",
+      "acceptedAnswer": "{2, 3, 4, 6, 8, 9, 10}",
+      "help": {
+        "tip": "A matematikai „vagy” megengedi azt is, hogy mindkettő igaz legyen.",
+        "nextStep": "Írd fel külön a 2 többszöröseit és a 3 többszöröseit, majd egyesítsd őket.",
+        "fullSolution": "2 többszörösei: 2,4,6,8,10; 3 többszörösei: 3,6,9. Együtt: {2,3,4,6,8,9,10}."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P05",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Mi a tagadása ennek: a ≤ 4?",
+      "acceptedAnswer": "a > 4",
+      "help": {
+        "tip": "A tagadásnak a 4-et nem szabad tartalmaznia, mert az eredeti állításban benne van.",
+        "nextStep": "Mely számokra nem igaz az, hogy a legfeljebb 4?",
+        "fullSolution": "a > 4"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P06",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Igaz-e? „Ha egy egész szám 4-gyel osztható, akkor páros.”",
+      "acceptedAnswer": "igaz",
+      "help": {
+        "tip": "Próbáld meg felírni: 4k = 2·(2k).",
+        "nextStep": "Minden 4 többszöröse egyben 2 többszöröse is.",
+        "fullSolution": "Igaz, mert ha n=4k, akkor n=2·(2k), tehát páros."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-P07",
+      "moduleId": "K01",
+      "phase": "practice",
+      "prompt": "Cáfold meg ellenpéldával: „Ha egy szám páros, akkor 4-gyel is osztható.”",
+      "acceptedAnswer": "például 6",
+      "help": {
+        "tip": "Egyetlen páros számot keress, amely nem osztható 4-gyel.",
+        "nextStep": "A 2, 6, 10, 14 közül bármelyik megfelel.",
+        "fullSolution": "Például 6 páros, de 4-gyel nem osztható, ezért az állítás hamis."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K01-T01",
+      "moduleId": "K01",
+      "phase": "independent_check",
+      "prompt": "Írd le szavakkal: 3 ≤ x < 8.",
+      "acceptedAnswer": "x legalább 3 és 8-nál kisebb",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K01-T02",
+      "moduleId": "K01",
+      "phase": "independent_check",
+      "prompt": "Sorold fel azokat az egész számokat, amelyekre −2 < x ≤ 2.",
+      "acceptedAnswer": "{-1, 0, 1, 2}",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K02-P01",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "2 féle sapka és 4 féle sál közül választasz egyet-egyet. Hány összeállítás van?",
+      "acceptedAnswer": "8",
+      "help": {
+        "tip": "Két egymás utáni választás történik.",
+        "nextStep": "Minden sapkához 4 sál tartozhat.",
+        "fullSolution": "2·4 = 8."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P02",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "Egy menüben 3 leves és 5 főétel van. Egy levest és egy főételt választasz. Hány menü készíthető?",
+      "acceptedAnswer": "15",
+      "help": {
+        "tip": "Minden leves után bármelyik főétel választható.",
+        "nextStep": "3 választás, mindegyikhez 5 folytatás.",
+        "fullSolution": "3·5 = 15."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P03",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "Egy ajtóhoz 4 különböző kulcs, egy másikhoz 3 különböző kulcs próbálható. Ha csak az egyik ajtót kell kinyitni, összesen hány kulcs közül választhatsz?",
+      "acceptedAnswer": "7",
+      "help": {
+        "tip": "Itt nem két egymás utáni döntés van.",
+        "nextStep": "Vagy az első ajtó 4 kulcsa közül, vagy a második 3 kulcsa közül választasz.",
+        "fullSolution": "4+3 = 7."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P04",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "Egy kód első karaktere A, B vagy C, a második karaktere 1, 2, 3 vagy 4. Hány különböző kód van?",
+      "acceptedAnswer": "12",
+      "help": {
+        "tip": "Az első és második pozíció egymást követi.",
+        "nextStep": "3 lehetőség után mindig 4 lehetőség jöhet.",
+        "fullSolution": "3·4 = 12."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P05",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "Három igen/nem kérdésre válaszolunk. Hányféle válaszsorozat lehetséges?",
+      "acceptedAnswer": "8",
+      "help": {
+        "tip": "Minden kérdésnél 2 lehetőség van.",
+        "nextStep": "Három egymás utáni kétágú döntés: 2·2·2.",
+        "fullSolution": "8 válaszsorozat."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P06",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "A városból a tóhoz 3 út vezet, a tótól a kilátóhoz 2 út. Hányféleképpen juthatsz a városból a kilátóhoz a tavon át?",
+      "acceptedAnswer": "6",
+      "help": {
+        "tip": "Egy első út után egy második utat is választani kell.",
+        "nextStep": "Mindhárom első úthoz 2 folytatás tartozik.",
+        "fullSolution": "3·2 = 6."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-P07",
+      "moduleId": "K02",
+      "phase": "practice",
+      "prompt": "Öt futó közül arany- és ezüstérmest választunk, ugyanaz a futó nem lehet mindkettő. Hány lehetséges sorrend van?",
+      "acceptedAnswer": "20",
+      "help": {
+        "tip": "Az arany helyére 5 ember kerülhet. Utána eggyel kevesebb marad.",
+        "nextStep": "5·4.",
+        "fullSolution": "20 különböző dobogós sorrend."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K02-T01",
+      "moduleId": "K02",
+      "phase": "independent_check",
+      "prompt": "Egy rendszámrész két betűből áll. Mindkét helyre az A, B vagy C kerülhet, ismétlés megengedett. Hány lehetőség van?",
+      "acceptedAnswer": "9",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K02-T02",
+      "moduleId": "K02",
+      "phase": "independent_check",
+      "prompt": "Egy fagylaltozóban 5 íz és 3 öntet van. Egy ízt és egy öntetet választasz. Hányféle rendelés lehet?",
+      "acceptedAnswer": "15",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K03-P01",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "A={1,3,5,7}. Igaz-e: 5 ∈ A?",
+      "acceptedAnswer": "igaz",
+      "help": {
+        "tip": "Nézd meg, szerepel-e az 5 a felsorolásban.",
+        "nextStep": "Az 5 ott van A elemei között.",
+        "fullSolution": "Igaz: 5 ∈ A."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P02",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "A={1,3,5,7}. Igaz-e: 2 ∉ A?",
+      "acceptedAnswer": "igaz",
+      "help": {
+        "tip": "Nézd meg, szerepel-e a 2.",
+        "nextStep": "A 2 nincs a felsorolásban.",
+        "fullSolution": "Igaz: 2 ∉ A."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P03",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "Hány eleme van a {2,2,4,4,6} halmaznak?",
+      "acceptedAnswer": "3",
+      "help": {
+        "tip": "A halmazban az ismétlés nem számít új elemnek.",
+        "nextStep": "A különböző elemek: 2,4,6.",
+        "fullSolution": "Az elemszám 3."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P04",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "Legyen A={1,2,3,4}. Igaz-e: {2,4} ⊆ A?",
+      "acceptedAnswer": "igaz",
+      "help": {
+        "tip": "A részhalmaz minden elemének benne kell lennie A-ban.",
+        "nextStep": "2 és 4 is A eleme.",
+        "fullSolution": "Igaz."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P05",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "Legyen A={1,2,3,4}. Igaz-e: {2,5} ⊆ A?",
+      "acceptedAnswer": "hamis",
+      "help": {
+        "tip": "Keress olyan elemet a kis halmazban, amely nincs A-ban.",
+        "nextStep": "Az 5 nincs A-ban.",
+        "fullSolution": "Hamis."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P06",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "Add meg felsorolással: B={x egész | −2 ≤ x < 3}.",
+      "acceptedAnswer": "{-2,-1,0,1,2}",
+      "help": {
+        "tip": "A −2 benne van, a 3 már nincs.",
+        "nextStep": "Sorold az egész számokat −2-től 2-ig.",
+        "fullSolution": "B={−2,−1,0,1,2}."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-P07",
+      "moduleId": "K03",
+      "phase": "practice",
+      "prompt": "Melyik halmaz az üres halmaz? „A 0-nál nagyobb és 0-nál kisebb valós számok halmaza.”",
+      "acceptedAnswer": "∅",
+      "help": {
+        "tip": "Lehet-e egy szám egyszerre nagyobb és kisebb 0-nál?",
+        "nextStep": "Nincs ilyen szám.",
+        "fullSolution": "A halmaznak nincs eleme, tehát ∅."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K03-T01",
+      "moduleId": "K03",
+      "phase": "independent_check",
+      "prompt": "Legyen A={−2,0,2,4}. Döntsd el: {0,4} ⊆ A.",
+      "acceptedAnswer": "igaz",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K03-T02",
+      "moduleId": "K03",
+      "phase": "independent_check",
+      "prompt": "Add meg felsorolással a 12-nél kisebb pozitív páros egész számok halmazát.",
+      "acceptedAnswer": "{2,4,6,8,10}",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K04-P01",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "A={1,2,3}, B={3,4,5}. Mi A∪B?",
+      "acceptedAnswer": "{1,2,3,4,5}",
+      "help": {
+        "tip": "Uniónál minden olyan elem kell, amely legalább az egyik halmazban benne van.",
+        "nextStep": "Írd össze a két felsorolást, az ismétlést csak egyszer hagyd meg.",
+        "fullSolution": "{1,2,3,4,5}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P02",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "A={1,2,3}, B={3,4,5}. Mi A∩B?",
+      "acceptedAnswer": "{3}",
+      "help": {
+        "tip": "Metszet = közös rész.",
+        "nextStep": "Melyik elem szerepel mindkét felsorolásban?",
+        "fullSolution": "{3}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P03",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "A={1,2,3,4}, B={3,4,5}. Mi A\\B?",
+      "acceptedAnswer": "{1,2}",
+      "help": {
+        "tip": "A-ból indulj, és töröld azokat, amelyek B-ben is benne vannak.",
+        "nextStep": "A 3 és 4 B-ben is szerepel.",
+        "fullSolution": "{1,2}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P04",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "A={1,2,3,4}, B={3,4,5}. Mi B\\A?",
+      "acceptedAnswer": "{5}",
+      "help": {
+        "tip": "A különbség iránya számít.",
+        "nextStep": "B elemei közül melyik nincs A-ban?",
+        "fullSolution": "{5}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P05",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "U={1,2,3,4,5,6,7,8}, A={2,4,6,8}. Mi A komplementere U-ban?",
+      "acceptedAnswer": "{1,3,5,7}",
+      "help": {
+        "tip": "Az alaphalmazból vedd ki A elemeit.",
+        "nextStep": "U-ban a párosak A-ban vannak, a páratlanok maradnak.",
+        "fullSolution": "{1,3,5,7}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P06",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "A a 10-nél kisebb pozitív páros egészek, B a 10-nél kisebb pozitív 3-mal osztható egészek. Mi A∩B?",
+      "acceptedAnswer": "{6}",
+      "help": {
+        "tip": "Írd fel külön a két halmazt.",
+        "nextStep": "A={2,4,6,8}, B={3,6,9}.",
+        "fullSolution": "A∩B={6}."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-P07",
+      "moduleId": "K04",
+      "phase": "practice",
+      "prompt": "U={1,...,10}. A={2,4,6,8,10}, B={1,2,3,4,5}. Mi (A∩B) komplementere U-ban?",
+      "acceptedAnswer": "{1,3,5,6,7,8,9,10}",
+      "help": {
+        "tip": "Először a zárójeles műveletet végezd el.",
+        "nextStep": "A∩B={2,4}. Ezután U-ból vedd ki a 2-t és 4-et.",
+        "fullSolution": "{1,3,5,6,7,8,9,10}"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K04-T01",
+      "moduleId": "K04",
+      "phase": "independent_check",
+      "prompt": "A={a,b,c,d}, B={c,d,e}. Határozd meg A∩B-t és A∪B-t.",
+      "acceptedAnswer": "A∩B={c,d}; A∪B={a,b,c,d,e}",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K04-T02",
+      "moduleId": "K04",
+      "phase": "independent_check",
+      "prompt": "U={1,2,3,4,5}, A={1,4}. Add meg A komplementerét U-ban.",
+      "acceptedAnswer": "{2,3,5}",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K05-P01",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "|A|=12, |B|=9, |A∩B|=4. Mennyi |A∪B|?",
+      "acceptedAnswer": "17",
+      "help": {
+        "tip": "A közös elemeket az összeadás kétszer számolja.",
+        "nextStep": "12+9−4.",
+        "fullSolution": "17"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P02",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "20 tanulóból 11 szereti a teát, 8 a kávét, 5 mindkettőt. Hányan szeretnek legalább egyet?",
+      "acceptedAnswer": "14",
+      "help": {
+        "tip": "Használd a két halmaz szitaformuláját.",
+        "nextStep": "11+8−5.",
+        "fullSolution": "14"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P03",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "Az előző feladatban hányan szeretik csak a teát?",
+      "acceptedAnswer": "6",
+      "help": {
+        "tip": "A teakedvelők közül vedd ki a mindkettőt kedvelőket.",
+        "nextStep": "11−5.",
+        "fullSolution": "6"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P04",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "Az előző feladatban hányan egyik italt sem szeretik?",
+      "acceptedAnswer": "6",
+      "help": {
+        "tip": "Először számold ki, hányan vannak legalább az egyik halmazban.",
+        "nextStep": "Legalább egyet 14-en szeretnek, összesen 20-an vannak.",
+        "fullSolution": "20−14=6."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P05",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "Egy 32 fős osztályban 19-en járnak angol szakkörre, 17-en digitális kultúrára, 9-en mindkettőre. Hányan járnak pontosan az egyikre?",
+      "acceptedAnswer": "18",
+      "help": {
+        "tip": "Számold ki külön a csak-A és csak-B részt.",
+        "nextStep": "Csak angol:19−9=10. Csak digitális:17−9=8.",
+        "fullSolution": "10+8=18."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P06",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "Egy felmérésben 40 főből 25 használ Instagramot, 22 TikTokot, 15 mindkettőt. Hányan egyik platformot sem használják?",
+      "acceptedAnswer": "8",
+      "help": {
+        "tip": "Először legalább az egyik: 25+22−15.",
+        "nextStep": "Ez 32, majd 40−32.",
+        "fullSolution": "8"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-P07",
+      "moduleId": "K05",
+      "phase": "practice",
+      "prompt": "Egy könyvtár 50 látogatójából 31 kölcsönzött regényt, 24 ismeretterjesztő könyvet, 12 mindkettőt. Hányan kölcsönöztek csak ismeretterjesztőt?",
+      "acceptedAnswer": "12",
+      "help": {
+        "tip": "A B halmazból vedd ki a közös részt.",
+        "nextStep": "24−12.",
+        "fullSolution": "12"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K05-T01",
+      "moduleId": "K05",
+      "phase": "independent_check",
+      "prompt": "Egy 28 fős csoportban 16-an választották az A programot, 13-an a B programot, 7-en mindkettőt. Hányan választották legalább az egyiket, és hányan egyiket sem?",
+      "acceptedAnswer": "legalább egyik:22; egyik sem:6",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K05-T02",
+      "moduleId": "K05",
+      "phase": "independent_check",
+      "prompt": "Egy felmérésben |A|=23, |B|=18, |A∩B|=8. Hányan tartoznak pontosan az egyik halmazba?",
+      "acceptedAnswer": "25",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K06-P01",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Írd intervallummal: x ≥ 3.",
+      "acceptedAnswer": "[3;+∞[",
+      "help": {
+        "tip": "A 3 benne van, ezért ott zárt.",
+        "nextStep": "A +∞ soha nem végpontként benne lévő szám.",
+        "fullSolution": "[3;+∞["
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P02",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Írd egyenlőtlenséggel: ]−2;5].",
+      "acceptedAnswer": "−2 < x ≤ 5",
+      "help": {
+        "tip": "Bal oldalon nyílt, jobb oldalon zárt.",
+        "nextStep": "−2 nem megengedett, 5 megengedett.",
+        "fullSolution": "−2 < x ≤ 5."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P03",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Írd intervallummal: −4 < x < 1.",
+      "acceptedAnswer": "]−4;1[",
+      "help": {
+        "tip": "Mindkét egyenlőtlenség szigorú.",
+        "nextStep": "Egyik végpont sem tartozik bele.",
+        "fullSolution": "]−4;1["
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P04",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Mi [0;5] ∩ [3;8] ?",
+      "acceptedAnswer": "[3;5]",
+      "help": {
+        "tip": "Metszet = közös rész.",
+        "nextStep": "Mindkét intervallumban 3-tól 5-ig vagyunk.",
+        "fullSolution": "[3;5]"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P05",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Mi [0;3] ∪ [2;6] ?",
+      "acceptedAnswer": "[0;6]",
+      "help": {
+        "tip": "Az intervallumok átfednek, ezért az unió egybefüggő.",
+        "nextStep": "A lefedés 0-tól 6-ig tart.",
+        "fullSolution": "[0;6]"
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P06",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Mi ]−∞;2[ ∩ [2;5] ?",
+      "acceptedAnswer": "∅",
+      "help": {
+        "tip": "A 2 az első intervallumban nincs benne, és nincs más közös pont.",
+        "nextStep": "Az első 2 előtt ér véget, a második 2-nél kezdődik.",
+        "fullSolution": "A metszet üres: ∅."
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-P07",
+      "moduleId": "K06",
+      "phase": "practice",
+      "prompt": "Egy szolgáltatás 14:00-tól 18:00-ig érhető el, a 18:00-kor kezdődő időpont már nem foglalható. Írd intervallummal az időtartományt.",
+      "acceptedAnswer": "[14;18[",
+      "help": {
+        "tip": "14:00 választható, 18:00 már nem.",
+        "nextStep": "Bal végpont zárt, jobb nyílt.",
+        "fullSolution": "[14;18["
+      },
+      "requiresIndependent": false
+    },
+    {
+      "id": "K06-T01",
+      "moduleId": "K06",
+      "phase": "independent_check",
+      "prompt": "Add meg intervallummal: −1 ≤ x ≤ 4.",
+      "acceptedAnswer": "[−1;4]",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    },
+    {
+      "id": "K06-T02",
+      "moduleId": "K06",
+      "phase": "independent_check",
+      "prompt": "Határozd meg: ]−3;2] ∩ [0;5[.",
+      "acceptedAnswer": "[0;2]",
+      "help": {
+        "tip": null,
+        "nextStep": null,
+        "fullSolution": null
+      },
+      "requiresIndependent": true
+    }
+  ]
+}

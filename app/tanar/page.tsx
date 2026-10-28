@@ -1,42 +1,14 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import {useEffect,useState} from "react";
 import Header from "@/components/Header";
+import data from "@/data/kombinatorika-halmazok.json";
 
-type Saved = { practiceDone?: boolean[]; helpUsed?: number[]; checkDone?: boolean[]; masterFile?: string; masterPreview?: string; reflection?: string; confidence?: string; submitted?: boolean };
-const KEY = "matektutor.prototype.v1.student";
-
-export default function TeacherPage() {
-  const [s, setS] = useState<Saved>({});
-  const [feedback, setFeedback] = useState("");
-  const [status, setStatus] = useState("Átnézendő");
-  useEffect(() => { try { setS(JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {} }, []);
-  const practice = s.practiceDone?.filter(Boolean).length || 0;
-  const checks = s.checkDone?.filter(Boolean).length || 0;
-  const tips = s.helpUsed?.filter(x => x > 0).length || 0;
-  const full = s.helpUsed?.filter(x => x >= 3).length || 0;
-  return <>
-    <Header />
-    <main className="shell teacherShell">
-      <div className="eyebrow">TANÁRI NÉZET • PROTOTÍPUS</div>
-      <div className="teacherTitle"><div><h1>Elsőfokú egyenletek</h1><p>Próba osztály · 1 tanuló</p></div><span className="teacherBadge">Tanári felület</span></div>
-      <section className="teacherSummary">
-        <div><span>Gyakorlás</span><strong>{practice}/5</strong></div>
-        <div><span>Önálló ellenőrzés</span><strong>{checks}/2</strong></div>
-        <div><span>Segítséget kért</span><strong>{tips} feladatnál</strong></div>
-        <div><span>Teljes megoldást látott</span><strong>{full}×</strong></div>
-      </section>
-      <section className="teacherCard">
-        <div className="studentHead"><div className="avatar">PT</div><div><h2>Próba tanuló</h2><p>Elsőfokú egyenletek</p></div><span className={`statusPill ${s.submitted ? "submittedPill" : ""}`}>{s.submitted ? "Mesterfeladat beadva" : "Folyamatban"}</span></div>
-        <div className="teacherGrid">
-          <div className="infoPanel"><h3>Digitális munka</h3><dl><div><dt>Gyakorlófeladatok</dt><dd>{practice}/5</dd></div><div><dt>Önálló ellenőrzés</dt><dd>{checks}/2</dd></div><div><dt>Segítség</dt><dd>{tips} feladat</dd></div><div><dt>Teljes megoldás</dt><dd>{full} alkalom</dd></div></dl></div>
-          <div className="infoPanel"><h3>Mesterfeladat</h3><dl><div><dt>Státusz</dt><dd>{s.submitted ? "Beadva" : "Nincs beadva"}</dd></div><div><dt>Fájl</dt><dd>{s.masterFile || "—"}</dd></div><div><dt>Önértékelés</dt><dd>{s.confidence || "—"}</dd></div></dl></div>
-        </div>
-        {s.masterPreview && <div className="submissionPreview"><strong>Feltöltött megoldás</strong><img src={s.masterPreview} alt="A tanuló feltöltött kézírásos megoldása" /></div>}
-        <div className="reflectionBox"><strong>Tanulói megjegyzés</strong><p>{s.reflection || "A tanuló még nem írt megjegyzést."}</p></div>
-        <div className="teacherDecision"><h3>Tanári visszajelzés</h3><div className="decisionButtons"><button className={status === "Rendben" ? "activeDecision" : ""} onClick={() => setStatus("Rendben")}>✓ Rendben</button><button className={status === "Javítsd és add be újra" ? "activeDecision" : ""} onClick={() => setStatus("Javítsd és add be újra")}>↻ Javítsd és add be újra</button></div><textarea value={feedback} onChange={e => setFeedback(e.target.value)} placeholder="Rövid tanári megjegyzés..." /><button className="primaryButton" onClick={() => alert(`Prototípus: a visszajelzés mentése később Supabase-ba kerül.\nStátusz: ${status}\nMegjegyzés: ${feedback || "—"}`)}>Visszajelzés mentése</button></div>
-      </section>
-      <div className="prototypeNote"><strong>Ebben a prototípusban</strong><span>a feltöltött fájl csak név szerint jelenik meg, és az adat ugyanabban a böngészőben él. A valódi fájltárolást, bejelentkezést és osztályokat csak akkor építjük meg, ha ez a tanulói–tanári folyamat tetszik.</span></div>
-    </main>
-  </>;
+type ModuleSaved={practiceDone?:boolean[];independentDone?:boolean[];helpUsed?:number[]};
+type Master={fileName?:string;preview?:string;confidence?:string;reflection?:string;submitted?:boolean};
+export default function TeacherPage(){
+ const [mods,setMods]=useState<Record<string,ModuleSaved>>({}); const [master,setMaster]=useState<Master>({}); const [feedback,setFeedback]=useState(""); const [status,setStatus]=useState("Átnézendő");
+ useEffect(()=>{const x:Record<string,ModuleSaved>={};for(const m of data.modules){try{x[m.id]=JSON.parse(localStorage.getItem(`matektutor.g9.kombhal.${m.id}.v1`)||"{}");}catch{x[m.id]={};}}setMods(x);try{setMaster(JSON.parse(localStorage.getItem("matektutor.g9.kombhal.master.v1")||"{}"));}catch{}},[]);
+ const finished=data.modules.filter(m=>(mods[m.id]?.independentDone?.filter(Boolean).length||0)===m.independent.length).length;
+ const values=Object.values(mods) as ModuleSaved[]; const tips=values.reduce((a,s)=>a+(s.helpUsed?.filter(x=>x>0).length||0),0); const full=values.reduce((a,s)=>a+(s.helpUsed?.filter(x=>x>=3).length||0),0);
+ return <><Header/><main className="shell teacherShell"><div className="eyebrow">TANÁRI NÉZET • 9. ÉVFOLYAM</div><div className="teacherTitle"><div><h1>Kombinatorika és halmazok</h1><p>Próba tanuló · témaköri áttekintés</p></div><span className="teacherBadge">Tanári felület</span></div><section className="teacherSummary"><div><span>Kész modul</span><strong>{finished}/6</strong></div><div><span>Segítségkérés</span><strong>{tips} feladat</strong></div><div><span>Teljes megoldás</span><strong>{full}×</strong></div><div><span>Mesterfeladat</span><strong>{master.submitted?"Beadva":"—"}</strong></div></section><section className="teacherCard"><div className="studentHead"><div className="avatar">PT</div><div><h2>Próba tanuló</h2><p>9. évfolyam · Kombinatorika és halmazok</p></div><span className={`statusPill ${master.submitted?"submittedPill":""}`}>{master.submitted?"Mesterfeladat beadva":"Folyamatban"}</span></div><div className="teacherModuleTable"><div className="teacherModuleRow teacherModuleHead"><span>Modul</span><span>Gyakorlás</span><span>Önálló</span><span>Segítség</span></div>{data.modules.map(m=>{const s=mods[m.id]||{};return <div className="teacherModuleRow" key={m.id}><span><b>{m.id}</b> {m.title}</span><span>{s.practiceDone?.filter(Boolean).length||0}/{m.practice.length}</span><span>{s.independentDone?.filter(Boolean).length||0}/{m.independent.length}</span><span>{s.helpUsed?.filter(x=>x>0).length||0}</span></div>})}</div>{master.preview&&<div className="submissionPreview"><strong>Mesterfeladat – feltöltött megoldás</strong><img src={master.preview} alt="A tanuló feltöltött megoldása"/></div>}<div className="reflectionBox"><strong>Tanulói önreflexió</strong><p><b>Önállóság:</b> {master.confidence||"—"}</p><p>{master.reflection||"Még nincs megjegyzés."}</p></div><div className="teacherDecision"><h3>Tanári visszajelzés</h3><div className="decisionButtons"><button className={status==="Rendben"?"activeDecision":""} onClick={()=>setStatus("Rendben")}>✓ Rendben</button><button className={status==="Javítsd és add be újra"?"activeDecision":""} onClick={()=>setStatus("Javítsd és add be újra")}>↻ Javítsd és add be újra</button></div><textarea value={feedback} onChange={e=>setFeedback(e.target.value)} placeholder="Rövid tanári megjegyzés…"/><button className="primaryButton" onClick={()=>alert(`Prototípus: ${status}\n${feedback||"Nincs külön megjegyzés."}`)}>Visszajelzés mentése</button></div></section></main></>;
 }

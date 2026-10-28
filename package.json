@@ -1,6 +1,6 @@
 {
-  "name": "matektutor-uj-prototipus-v1",
-  "version": "1.0.1",
+  "name": "matektutor",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

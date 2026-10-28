@@ -5,7 +5,7 @@ export default function Header() {
     <header className="topbar">
       <Link className="brand" href="/">MatekTutor</Link>
       <nav className="topnav" aria-label="Fő navigáció">
-        <Link href="/tanulas/elsofoku-egyenletek">Diák nézet</Link>
+        <Link href="/9-evfolyam">9. évfolyam</Link>
         <Link href="/tanar">Tanári nézet</Link>
       </nav>
     </header>
