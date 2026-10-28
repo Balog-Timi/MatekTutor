@@ -15,19 +15,19 @@
       "concepts": [
         [
           "Pontos jelentés",
-          "A matematika nyelve azért szigorú, mert ugyanazt a mondatot mindenkinek ugyanúgy kell értenie. A „legalább 5” azt jelenti: 5 vagy annál több, tehát x ≥ 5. A „legfeljebb 5” azt jelenti: 5 vagy annál kevesebb, tehát x ≤ 5."
+          "A matematika nem szereti a „majdnem ugyanazt”. Ha azt mondjuk, hogy „legalább 5”, akkor az 5 maga is jó: 5, 6, 7, … Ezért írunk x ≥ 5. Ha viszont „5-nél több” a feltétel, akkor az 5 már nem fér bele: x > 5. Jó ellenőrzés: mindig próbáld ki magát a határértéket."
         ],
         [
           "És / vagy",
-          "Az „és” azt jelenti, hogy mindkét feltételnek egyszerre teljesülnie kell. A matematikai „vagy” általában megengedő: legalább az egyik feltétel teljesül, akár mindkettő is."
+          "Az „és” szűkít: egyszerre kell két feltételnek megfelelni. Például x > 0 ÉS x < 5 csak az 1, 2, 3, 4 egész számokat engedi. A matematikai „vagy” bővít: elég, ha legalább az egyik feltétel igaz — és az sem baj, ha mindkettő."
         ],
         [
           "Tagadás",
-          "Egy állítás tagadása pontosan azokat az eseteket tartalmazza, amikor az eredeti állítás nem igaz. Például „x > 3” tagadása „x ≤ 3”."
+          "A tagadás nem egyszerűen „megfordítja” a mondatot, hanem pontosan az összes kimaradó esetet fogja össze. Ha x > 3, akkor minden más eset x ≤ 3. A 3-at is bele kell venni, mert az eredeti állítás ott már hamis."
         ],
         [
           "Ellenpélda",
-          "Egy általános állítás megcáfolásához elég egyetlen olyan példa, amelyre az állítás nem igaz. Ezt ellenpéldának nevezzük."
+          "Egy olyan állítást, amely minden számról mond valamit, nem kell száz példával megcáfolni. Elég egyetlen olyan eset, amelyre nem igaz. Ha valaki azt állítja, hogy „minden páros szám 4-gyel osztható”, a 6 már elég ellenpélda."
         ]
       ],
       "guided": [
@@ -140,19 +140,19 @@
       "concepts": [
         [
           "Rendszeres felsorolás",
-          "Kis elemszámnál a lehetőségeket úgy soroljuk fel, hogy egyik se maradjon ki és egyik se szerepeljen kétszer."
+          "Kis feladatnál a felsorolás jó módszer — de csak akkor, ha van rendje. Például két pénzérménél ne véletlenszerűen írj eredményeket: előbb rögzítsd az első érme egyik oldalát, és sorold végig a második lehetőségeit. Így nem marad ki és nem ismétlődik semmi."
         ],
         [
           "Faábra",
-          "Egymás után meghozott döntéseket ágakkal lehet ábrázolni. Minden teljes út egy lehetőség."
+          "A faábra egymás utáni döntéseket rajzol le. Minden elágazás egy döntés, minden teljes út pedig egy teljes lehetőség. Ha 3 póló közül választasz, majd 2 nadrág közül, akkor három ág indul, és mindegyikből két új ág nő ki."
         ],
         [
           "Szorzási szabály",
-          "Ha az első döntésre a lehetőség van, és minden első döntés után b második lehetőség, akkor összesen a·b lehetőség van."
+          "Ha egy választás után mindig ugyanannyi következő lehetőség jön, a faágak száma szorzással számolható. 3 póló mindegyikéhez 2 nadrág választható, ezért 3·2=6 összeállítás van. A szorzás itt nem trükk: a faábra rövid leírása."
         ],
         [
           "Összeadási szabály",
-          "Ha egymást kizáró esetek közül választhatunk, az esetek darabszámát összeadjuk."
+          "Ha nem egymás után választunk, hanem egymást kizáró utak közül csak az egyik történhet meg, akkor gyakran összeadunk. Ha 4 szendvics VAGY 3 saláta közül választasz pontosan egy ételt, 4+3=7 lehetőséged van."
         ]
       ],
       "guided": [
@@ -263,23 +263,23 @@
       "concepts": [
         [
           "Elem és halmaz",
-          "Ha x eleme A-nak: x ∈ A. Ha nem eleme: x ∉ A."
+          "A halmaz egy csoport, az elem pedig a csoport egy tagja. Ha A={1,3,5,7}, akkor 5 ∈ A azt jelenti: „5 benne van A-ban”. Fontos: bal oldalon itt egyetlen elem áll, nem egy kisebb halmaz."
         ],
         [
           "Halmaz megadása",
-          "Megadhatjuk elemeinek felsorolásával vagy egy közös tulajdonsággal."
+          "Egy halmazt két gyakori módon adunk meg. Felsorolhatjuk az elemeit: {2,4,6,8}; vagy leírhatjuk a szabályt: „a 10-nél kisebb pozitív páros egész számok”. A két leírás ugyanazt a csoportot jelentheti."
         ],
         [
           "Részhalmaz",
-          "B ⊆ A azt jelenti, hogy B minden eleme A-nak is eleme."
+          "B ⊆ A azt jelenti: B minden eleme A-ban is benne van. Nem az számít, hogy B kisebbnek „látszik-e”, hanem az, hogy van-e benne akár egyetlen olyan elem, amely A-ból hiányzik. Ha van, akkor B már nem részhalmaz."
         ],
         [
           "Elemek nem ismétlődnek",
-          "Egy halmazban az ismételt felsorolás nem hoz létre új elemet: {1,1,2} ugyanaz a halmaz, mint {1,2}."
+          "A halmazban egy elem vagy benne van, vagy nincs benne — az nem számít, hányszor írtuk le. Ezért {1,1,2,2,2} ugyanaz a halmaz, mint {1,2}, és az elemszáma 2."
         ],
         [
           "Üres halmaz",
-          "Az ∅ olyan halmaz, amelynek nincs eleme."
+          "Van olyan feltétel, amelynek semmi sem felel meg. Például nincs olyan valós szám, amely egyszerre nagyobb 0-nál és kisebb 0-nál. Az ilyen, elem nélküli halmaz jele ∅."
         ]
       ],
       "guided": [
@@ -391,19 +391,19 @@
       "concepts": [
         [
           "Unió",
-          "A ∪ B: azok az elemek, amelyek A vagy B legalább egyikében benne vannak."
+          "Az unió kérdése: „Ki van benne A-ban VAGY B-ben?” Minden olyan elem kell, amely legalább az egyik halmazban szerepel. Ha valaki mindkettőben benne van, akkor is csak egyszer írjuk le."
         ],
         [
           "Metszet",
-          "A ∩ B: azok az elemek, amelyek A-ban és B-ben is benne vannak."
+          "A metszet kérdése: „Ki van benne A-ban ÉS B-ben egyszerre?” A Venn-diagramon ez a két kör átfedő része. Ha nincs közös elem, a metszet az üres halmaz."
         ],
         [
           "Különbség",
-          "A \\ B: A azon elemei, amelyek B-ben nincsenek benne."
+          "A\\B irányított művelet. A-ból indulunk, és kivesszük mindazt, ami B-ben is benne van. Ezért A\\B és B\\A általában nem ugyanaz. Jó mondat hozzá: „A-ból azok, akik nem B-sek”."
         ],
         [
           "Komplementer",
-          "Egy alaphalmazhoz képest A komplementere azokból áll, amelyek az alaphalmazban benne vannak, A-ban viszont nem."
+          "A komplementerhez mindig kell egy alaphalmaz. Ha az alaphalmaz az osztály összes tanulója, A pedig a szemüveges tanulók halmaza, akkor A komplementere az osztály nem szemüveges tanulóiból áll. Ugyanaz az A más alaphalmazban más komplementert adhat."
         ]
       ],
       "guided": [
@@ -515,19 +515,19 @@
       "concepts": [
         [
           "Miért kell korrigálni?",
-          "Ha |A| és |B| értékét összeadjuk, a közös elemeket kétszer számoljuk."
+          "Ha 18 tanuló focizik és 14 kosarazik, nem mondhatjuk rögtön, hogy 32 sportoló van. Aki mindkét sportot űzi, az bekerült a 18-ba és a 14-be is — vagyis kétszer számoltuk. A logikai szita ezt a dupla számolást javítja ki."
         ],
         [
           "Két halmaz logikai szitája",
-          "|A∪B| = |A| + |B| − |A∩B|."
+          "Először összeadjuk a két teljes csoportot: |A|+|B|. Ekkor a közös rész kétszer szerepel. Ezért egyszer levonjuk: |A∪B|=|A|+|B|−|A∩B|. A képlet mögött csak ennyi történik."
         ],
         [
           "Csak A / csak B",
-          "Csak A: |A|−|A∩B|. Csak B: |B|−|A∩B|."
+          "Ha azt kérdezik, hányan vannak „csak A-ban”, akkor A teljes létszámából kivesszük a közös részt. Ugyanez B-re is igaz. Ezek a Venn-diagram két szélső, nem átfedő tartományai."
         ],
         [
           "Egyik sem",
-          "Ha az alaphalmaz elemszáma |U|, akkor egyik sem: |U|−|A∪B|."
+          "Az „egyik sem” már az alaphalmazhoz kötődik. Előbb kiszámoljuk, hányan vannak legalább az egyik csoportban, majd ezt kivonjuk az összesből. Ha 30 tanulóból 26 legalább az egyik sportot űzi, 4-en egyikben sincsenek."
         ]
       ],
       "guided": [
@@ -640,23 +640,23 @@
       "concepts": [
         [
           "Zárt végpont",
-          "Ha a végpont is megengedett, zárt zárójelet használunk: [a;b]."
+          "A zárt végpont azt jelzi, hogy a határérték is megengedett. A [2;7] intervallumban a 2 és a 7 is benne van. Ugyanez egyenlőtlenséggel: 2 ≤ x ≤ 7."
         ],
         [
           "Nyílt végpont",
-          "Ha a végpont nem megengedett, nyílt zárójelet használunk: ]a;b[. Az alkalmazásban megjeleníthetjük a nemzetközi (a,b) jelölést is, de a tanulói felület alapértelmezetten a magyar tankönyvi jelölést használja."
+          "A nyílt végpontnál a határérték már nincs benne a tartományban. A ]2;7[ intervallum azt jelenti: 2 < x < 7. A számegyenesen ezt üres karikával érdemes elképzelni."
         ],
         [
           "Félig nyílt intervallum",
-          "Például [2;5[ azt jelenti: 2 ≤ x < 5."
+          "A két végpontot külön-külön kell eldönteni. [2;7[ esetén a 2 benne van, a 7 nincs. Ezért a megfelelő egyenlőtlenség: 2 ≤ x < 7. Ne egyben próbáld megjegyezni a zárójeleket — kérdezd meg mindkét végpontnál: „bent van?”"
         ],
         [
           "Végtelen",
-          "∞ és −∞ soha nem tartozik az intervallumhoz, ezért a végtelen oldala mindig nyílt."
+          "A +∞ és −∞ nem olyan számok, amelyeket „elérünk”, ezért nem lehetnek benne egy intervallumban zárt végpontként. Ezért például x ≥ 3 intervalluma [3;+∞[."
         ],
         [
           "Metszet és unió",
-          "Intervallumoknál a metszet a közös rész, az unió az összes lefedett pont."
+          "Intervallumoknál ugyanaz a gondolat működik, mint halmazoknál. A metszet a két tartomány közös része, az unió pedig az összes pont, amely legalább az egyik intervallumban benne van. A számegyenes ezt sokszor gyorsabban megmutatja, mint a puszta jelölés."
         ]
       ],
       "guided": [
